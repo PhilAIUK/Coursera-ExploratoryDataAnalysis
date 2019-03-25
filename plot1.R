@@ -1,18 +1,33 @@
-## R Code file to create Plot 1
+# Coursera Course - Exploratory Data Analysis
+# Week 1 Assignment
+# By PhilAIUK
+# March 25, 2019
 
-## This file includes the following steps:
-## - Read the data
-## - Constructs Plot 1
-## - Create plot1.png file
+# R Code file to create Plot 1
 
-## Read the data
+# This file includes the following steps:
+# - Read the data
+# - Constructs Plot 1
+# - Create plot1.png file
 
+# 1. Read the data
+# Set up a specific working directory for this assignment
+setwd("/Users/Philippe1/DataCourse4Week1")
 
-## Construct Plot 1
+# Load the assignment Datase
+# The dataset has 2,075,259 rows and 9 columns, and a header
+# In this dataset missing values are coded as "?"
+alldata <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+# We will only be using data from the dates 2007-02-01 and 2007-02-02
+dataplot1 <- subset(alldata, Date %in% c("1/2/2007","2/2/2007"))
+# Convert the Date and Time variables to Date/Time classes in R
+dataplot1$Date <- as.Date(dataplot1$Date, format="%d/%m/%Y")
 
+# 2. Construct Plot 1
+hist(dataplot1$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
 
-## Create plot1.png file
+# 3. Create plot1.png file
+dev.print(png, file = "plot1.png", width=480, height=480)
+dev.off()  # Close the Graphical Device
 
-
-
-## Please look at plot1.png file for the result
+# Please look at plot1.png file for the result
