@@ -1,5 +1,9 @@
-# Coursera - Exploratory Data Analysis course - 
-# Week 1 Peer-graded Assignment for the Coursera Exploratory Data Analysis course (Johns Hopkins University)
+# Coursera - Exploratory Data Analysis course
+
+## Week 1 Peer-graded Assignment
+- Course: Exploratory Data Analysis (Johns Hopkins University)
+- Files and plots created by PhilAIUK
+- March 2019
 
 ## Summary of the task
 Our overall goal here is simply to examine how household energy usage varies over a 2-day period in February, 2007. 
